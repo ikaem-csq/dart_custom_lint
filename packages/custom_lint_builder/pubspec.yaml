@@ -12,7 +12,7 @@ dependencies:
   collection: ^1.16.0
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
-  custom_lint: 0.5.11
+  custom_lint: any
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
   custom_lint_core: 0.5.11
