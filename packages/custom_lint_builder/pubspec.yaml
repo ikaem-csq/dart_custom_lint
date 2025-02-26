@@ -13,7 +13,10 @@ dependencies:
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
   custom_lint: 
-    path: ../custom_lint
+    git: 
+      url: https://github.com/ikaem-csq/dart_custom_lint.git
+      ref: fix/null_aware_0_5_11
+      path: packages/custom_lint
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
   custom_lint_core: 0.5.11
