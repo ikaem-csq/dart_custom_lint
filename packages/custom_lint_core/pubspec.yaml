@@ -12,7 +12,11 @@ dependencies:
   collection: ^1.16.0
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
-  custom_lint: 0.5.11
+  custom_lint: 
+    git: 
+      url: https://github.com/ikaem-csq/dart_custom_lint.git
+      ref: fix/null_aware_0_5_11
+      path: packages/custom_lint
   matcher: ^0.12.0
   meta: ^1.7.0
   package_config: ^2.1.0

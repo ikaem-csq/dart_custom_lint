@@ -19,7 +19,11 @@ dependencies:
       path: packages/custom_lint
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
-  custom_lint_core: 0.5.11
+  custom_lint_core: 
+    git: 
+      url: https://github.com/ikaem-csq/dart_custom_lint.git
+      ref: fix/null_aware_0_5_11
+      path: packages/custom_lint_core
   glob: ^2.1.1
   hotreloader: ">=3.0.5 <5.0.0"
   meta: ^1.7.0
