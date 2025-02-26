@@ -542,9 +542,18 @@ publish_to: 'none'
   }
 
   void _writeEnvironment(StringBuffer buffer) {
-    final environmentKeys = projects
-        .expand((e) => e.pubspec.environment?.keys ?? <String>[])
-        .toSet();
+    final environmentKeys = projects.expand((e) {
+      final environment = e.pubspec.environment;
+      if (environment == null) return <String>[];
+
+      final keys = environment.keys;
+      if (keys.isEmpty) return <String>[];
+
+      return keys;
+
+      // NOTE: This was original
+      // return e.pubspec.environment?.keys ?? <String>[];
+    }).toSet();
 
     if (environmentKeys.isEmpty) return;
 
@@ -553,7 +562,14 @@ publish_to: 'none'
     for (final key in environmentKeys) {
       final projectMeta = projects
           .map((project) {
-            final constraint = project.pubspec.environment?[key];
+            // NOTE: This was original
+            // final constraint = project.pubspec.environment?[key];
+
+            final environment = project.pubspec.environment;
+            if (environment == null) return null;
+
+            final constraint = environment[key];
+
             if (constraint == null) return null;
             return (project: project, constraint: constraint);
           })
